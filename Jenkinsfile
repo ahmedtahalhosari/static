@@ -10,7 +10,7 @@ pipeline {
         stage('Upload to AWS') {
             steps {
                 retry(3) {
-                    withAWS(region:'us-east-1', credentials: 'aws-static') {
+                    withAWS(region:'us-west-1', credentials: 'aws-static') {
                         s3Upload(file:'index.html', bucket:'tamas-udacity-project-jenkins', path:'index.html')
                     }
                 }
